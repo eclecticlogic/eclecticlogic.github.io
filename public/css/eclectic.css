@@ -1,0 +1,54 @@
+/* Left sidebar*/
+
+img.eclectic-logo-left {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Main page*/
+
+section.intro {
+    
+}
+
+img.eclectic-logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h2.intro {
+    text-align: center;
+    padding-top: 7rem;
+    color: #7f8c8d;
+}
+
+section.intro div.snippets {
+    padding-top: 80px;
+}
+
+section.expertise {
+    padding-top: 90px;
+}
+
+h2.expertise {
+    text-align:  center;
+}
+
+section.expertise h5 {
+    display: inline-block;
+    margin-left: 1rem;
+    font-size:  18px;
+}
+
+section.expertise p {
+    margin-left:  3rem;
+    font-size: 16px;
+}
+
+
+/* Blog posts*/
+a.comment-count {
+    font-size:  0.7rem;
+}

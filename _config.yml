@@ -1,25 +1,25 @@
 # Dependencies
 markdown:         redcarpet
-pygments:         true
+highlighter:         pygments
 
 # Permalinks
 permalink:        pretty
 
 # Setup
-title:            Hyde
-tagline:          'A Jekyll theme'
-description:      'A brazen two-column <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that pairs a prominent sidebar with uncomplicated content. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.'
-url:              http://hyde.getpoole.com
+title:            Eclectic Logic 
+tagline:          'Elegance in Craftsmanship'
+description:      'We build next-generation interactive and scalable systems. With deep expertise in the Java Platform, mobile, transactional systems, persistence models, analytics and high performance computing, we solve complex problems and turn ideas into reality.'
+url:              http://eclecticlogic.com
 baseurl:          /
 
 author:
-  name:           'Mark Otto'
-  url:            https://twitter.com/mdo
+  name:           'Karthik Abram'
+  url:            https://twitter.com/eclecticlogic
 
 paginate:         5
+paginate_path: "blog/page:num"
 
 # Custom vars
-version:          2.1.0
 
 github:
-  repo:           https://github.com/poole/hyde
+  repo:           https://github.com/eclecticlogic

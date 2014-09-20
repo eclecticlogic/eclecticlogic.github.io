@@ -32,8 +32,9 @@
  */
 
 html {
-  font-family: "PT Sans", Helvetica, Arial, sans-serif;
+  font-family: 'Montserrat',"PT Sans", Helvetica, Arial, sans-serif;
 }
+
 @media (min-width: 48em) {
   html {
     font-size: 16px;
@@ -121,13 +122,13 @@ a.sidebar-nav-item:focus {
  */
 
 .content {
-  padding-top:    4rem;
+  padding-top:    2rem;
   padding-bottom: 4rem;
 }
 
 @media (min-width: 48em) {
   .content {
-    max-width: 38rem;
+    /*max-width: 38rem;*/
     margin-left: 20rem;
     margin-right: 2rem;
   }
@@ -176,9 +177,9 @@ a.sidebar-nav-item:focus {
 
 /* Base16 (http://chriskempson.github.io/base16/#default) */
 
-/* Red */
+/* Red - Pomegranate */
 .theme-base-08 .sidebar {
-  background-color: #ac4142;
+  background-color: #c0392b;
 }
 .theme-base-08 .content a,
 .theme-base-08 .related-posts li a:hover {
@@ -187,7 +188,7 @@ a.sidebar-nav-item:focus {
 
 /* Orange */
 .theme-base-09 .sidebar {
-  background-color: #d28445;
+  background-color: #f39c12;
 }
 .theme-base-09 .content a,
 .theme-base-09 .related-posts li a:hover {
@@ -196,7 +197,7 @@ a.sidebar-nav-item:focus {
 
 /* Yellow */
 .theme-base-0a .sidebar {
-  background-color: #f4bf75;
+  background-color: #f1c40f;
 }
 .theme-base-0a .content a,
 .theme-base-0a .related-posts li a:hover {
@@ -223,11 +224,11 @@ a.sidebar-nav-item:focus {
 
 /* Blue */
 .theme-base-0d .sidebar {
-  background-color: #6a9fb5;
+  background-color: #2980b9;
 }
 .theme-base-0d .content a,
 .theme-base-0d .related-posts li a:hover {
-  color: #6a9fb5;
+  color: #2980b9;
 }
 
 /* Magenta */

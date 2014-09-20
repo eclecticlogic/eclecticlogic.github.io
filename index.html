@@ -3,35 +3,68 @@ layout: default
 title: Home
 ---
 
-<div class="posts">
-  {% for post in paginator.posts %}
-  <div class="post">
-    <h1 class="post-title">
-      <a href="{{ post.url }}">
-        {{ post.title }}
-      </a>
-    </h1>
+<section class="intro">
+    <img class="eclectic-logo" src="public/images/eclectic-logo.jpg" alt="Eclectic Logic"/>
+	<h2 class="intro">Elegance in Software Craftsmanship</h2>
+        
+	<div class="snippets">
+        <div class="grid">
+			<div class="unit one-third">
+				<div class="short-text">
+					<i class="fa fa-bolt fa-2x"></i> Extensive experience
+				</div>
+			</div>
+			<div class="unit one-third">
+				<div class="short-text">
+					<i class="fa fa-gear fa-2x"></i> Quality product on time
+				</div>
+			</div>
+			<div class="unit one-third">
+				<div class="short-text">
+					<i class="fa fa-gift fa-2x"></i> Satisfaction guranteed
+				</div>
+			</div>
+		</div>
+    </div>
+</section>
 
-    <span class="post-date">{{ post.date | date_to_string }}</span>
+<section class="expertise">
+        <h2 class="expertise">EXPERTISE</h2>
+    <div class="grid">
+        <div class="unit half">
+            <i class="fa fa-university fa-border"></i>
+            <h5>Architecture</h5>
+            <p>Development of conceptual, logical, and physical/cloud architectures.</p>
+        </div>
+        <div class="unit half">
+            <i class="fa fa-cogs fa-border"></i>
+            <h5>Analysis</h5>
+            <p>Discovery and concept development, business requirements and operations analysis.</p>
+        </div>
+    </div>
+    <div class="grid">
+        <div class="unit half">
+            <i class="fa fa-code fa-border"></i>
+            <h5>Development</h5>
+            <p>Experience in building scalable server side architecture using the Java platform, JPA/Hibernate, Spring, SQL and Nosql databases.</p>
+        </div>
+        <div class="unit half">
+            <i class="fa fa-cloud fa-border"></i>
+            <h5>Interactive websites</h5>
+            <p>Sophisticated interactive websites with GWT.</p>
+        </div>
+    </div>
+    <div class="grid">
+        <div class="unit half">
+            <i class="fa fa-mobile fa-border"></i>
+            <h5>Mobile</h5>
+            <p>Native immersive application development.</p>
+        </div>
+        <div class="unit half">
+            <i class="fa fa-cube fa-border"></i>
+            <h5>Hardware</h5>
+            <p>Atmel microcontroller and ARM based systems.</p>
+        </div>
+    </div>
+</section>
 
-    {{ post.content }}
-  </div>
-  {% endfor %}
-</div>
-
-<div class="pagination">
-  {% if paginator.next_page %}
-    <a class="pagination-item older" href="{{ site.baseurl }}page{{paginator.next_page}}">Older</a>
-  {% else %}
-    <span class="pagination-item older">Older</span>
-  {% endif %}
-  {% if paginator.previous_page %}
-    {% if paginator.page == 2 %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}">Newer</a>
-    {% else %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}page{{paginator.previous_page}}">Newer</a>
-    {% endif %}
-  {% else %}
-    <span class="pagination-item newer">Newer</span>
-  {% endif %}
-</div>
