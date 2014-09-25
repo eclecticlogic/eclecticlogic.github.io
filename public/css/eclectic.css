@@ -52,3 +52,14 @@ section.expertise p {
 a.comment-count {
     font-size:  0.7rem;
 }
+
+
+/* Customize Twitter */
+span.full-name {
+    visibility: hidden;
+    display: none;
+}
+
+span.p-nickname {
+    color:  #000
+}
