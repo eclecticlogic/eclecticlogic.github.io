@@ -6,6 +6,9 @@ img.eclectic-logo-left {
     margin-right: auto;
 }
 
+p.copyright {
+    font-size: 0.8rem;
+}
 /* Main page*/
 
 section.intro {
@@ -53,6 +56,9 @@ a.comment-count {
     font-size:  0.7rem;
 }
 
+code {
+    color: #7f8c8d;   
+}
 
 /* Customize Twitter */
 span.full-name {

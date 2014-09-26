@@ -15,7 +15,7 @@ Whisper is a generic appender written to solve precisely this problem. However, 
 
 Whisper is available via Maven Central:
 
-{% highlight xml %}
+{% highlight xml linenos  %}
 
 <groupId>com.eclecticlogic</groupId>
 <artifactId>whisper</artifactId>
@@ -32,7 +32,7 @@ The Whisper code ships with a sample logback configuration (under src/sample/res
 
 To configure the Whisper appender, first you must configure two other appenders - the regular email appender for ERROR level logs and a second email appender for sending the suppression Digests when suppression kicks in. 
 
-{% highlight xml %}
+{% highlight xml linenos  %}
 
 <appender name="errorEmail" class="ch.qos.logback.classic.net.SMTPAppender">
     <filter class="ch.qos.logback.classic.filter.LevelFilter">
@@ -65,7 +65,7 @@ As you can see Whisper adds a special entry into the Mapped-Diagnostic-Context (
 
 Next we configure the Whisper appender itself.
 
-{% highlight xml %}
+{% highlight xml linenos %}
 
 <appender name="whisper"
     class="com.eclecticlogic.whisper.logback.WhisperAppender">
@@ -98,7 +98,7 @@ The units for the `suppressAfter` and `expireAfter` elements can be seconds (s, 
 
 The digest logger name is then associated with the digestAppender and the whisper appender is included in the list of default appenders.
 
-{% highlight xml %}
+{% highlight xml linenos %}
 
 <logger name="digest.appender.logger" level="error" additivity="false">
     <appender-ref ref="errorDigest" />

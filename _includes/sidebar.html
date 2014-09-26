@@ -3,10 +3,13 @@
     <img class="eclectic-logo-left" src="{{ site.baseurl }}public/images/eclectic-logo-small.png" alt="Eclectic Logic"/>
     {% endif %}
 
+    {% if page.title == "Home" %}
     <div class="tweets">
-        <a class="twitter-timeline" height="400" href="https://twitter.com/EclecticLogic" data-chrome="noborders noscrollbar nofooter transparent" data-theme="dark" data-link-color="#ecf0f1" data-widget-id="513353558138183680">Tweets by @EclecticLogic</a>
+        <a class="twitter-timeline" width="300" height="400" href="https://twitter.com/EclecticLogic" data-chrome="noborders noscrollbar nofooter transparent" data-theme="dark" data-link-color="#ecf0f1" data-widget-id="513353558138183680">Tweets by @EclecticLogic</a>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
     </div>
+    {% endif %}
+
     <div class="container sidebar-sticky">
 
     <nav class="sidebar-nav nav nav-pills" >
@@ -31,6 +34,6 @@
         <a class="sidebar-nav-item" href="{{ site.github.repo }}">GitHub</a>
     </nav>
 
-    <p>&copy; {{ site.time | date: '%Y' }}. All rights reserved.</p>
+    <p class="copyright">&copy; {{ site.time | date: '%Y' }}. All rights reserved.</p>
   </div>
 </div>
