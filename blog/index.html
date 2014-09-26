@@ -13,6 +13,7 @@ title: Eclectic Logic Blog
     </h1>
 
     <span class="post-date">{{ post.date | date_to_string }}</span>
+    <span class="post-tags">{{ post.tags | sort | array_to_sentence_string }}</span>
 
     {{ post.content }}
 
