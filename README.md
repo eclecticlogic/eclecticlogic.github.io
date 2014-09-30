@@ -1,3 +1,2 @@
-# Eclectic Logic 
+# [Eclectic Logic ](http://www.eclecticlogic.com)
 
-Source for www
