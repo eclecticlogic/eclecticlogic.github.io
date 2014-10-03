@@ -11,7 +11,7 @@ A side-effect of such proactive monitoring that is often overlooked is that a si
 
 ## Enter Whisper
 
-Whisper is a generic appender written to solve precisely this problem. However, the architecture of Whisper allows you to throttle any other "endpoint" appender - SMTPAppender being one of them. In other words, Whisper is an appender that sits in between your log statement and the final appender. It feeds the final appender as long as a per-message threshold is not breached. Once breached it suppresses all messages until idle rate is achieved. 
+[Whisper](https://github.com/eclecticlogic/whisper) is a generic appender written to solve precisely this problem. However, the architecture of Whisper allows you to throttle any other "endpoint" appender - SMTPAppender being one of them. In other words, Whisper is an appender that sits in between your log statement and the final appender. It feeds the final appender as long as a per-message threshold is not breached. Once breached it suppresses all messages until idle rate is achieved. 
 
 Whisper is available via Maven Central:
 
