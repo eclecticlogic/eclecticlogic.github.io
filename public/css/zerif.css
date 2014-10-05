@@ -1,0 +1,91 @@
+/*---------------------------------------
+ **   TYPOGRAPHY                     -----
+-----------------------------------------*/
+h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+h1,h2 {
+	font-family: 'Montserrat', 'sans-serif';
+	font-weight: 700;
+	text-transform: uppercase;
+}
+h1 {
+	font-size: 55px;
+}
+h2 {
+	font-size: 45px !important;
+	line-height: 55px;
+}
+h3 {
+	font-size: 24px;
+}
+h4 {
+	font-size: 18px;
+}
+h5 {
+	font-size: 17px;
+}
+h6 {
+	font-size: 16px;
+}
+
+
+.section-header {
+	text-align: center;
+	padding-bottom: 75px;
+}
+
+
+.about-us {
+	background: #272727;
+	color: #FFF;
+    padding-top: 80px;
+	padding-bottom: 80px;
+}
+
+.about-us .big-intro {
+	text-align: right;
+	font-weight: 300;
+	font-size: 60px;
+	line-height: normal;
+	margin-top: -15px;
+}
+
+/*--SKILLS --*/
+.skills {
+	text-align: left;
+}
+.skills .skill {
+	display: block;
+	clear: both;
+	margin-top: 0;
+	margin-bottom: 25px;
+}
+.skills .skill .skill-count {
+	display: inline-block;
+	height: 64px;
+	margin-top: 3px;
+	float: left;
+	margin-right: 15px;
+	margin-bottom: 25px;
+}
+.skills li:last-child {
+	margin-bottom: 0;
+}
+.skills .skill .skill1,.skill2,.skill3,.skill4 {
+	font-size: 16px !important;
+}
+.skills .skill h6 {
+	text-transform: uppercase;
+	font-weight: 700;
+}
+.skills .skill p {
+	line-height: 20px;
+	color: #8f8f8f;
+}

@@ -14,19 +14,28 @@
     {% endif %}
   </title>
 
-  <!-- CSS -->
-
-  <link rel="stylesheet" href="{{ site.baseurl }}public/css/gridism.css">    
-  <link rel="stylesheet" href="{{ site.baseurl }}public/css/poole.css">
-  <link rel="stylesheet" href="{{ site.baseurl }}public/css/syntax.css">
-  <link rel="stylesheet" href="{{ site.baseurl }}public/css/hyde.css">
-  <link rel="stylesheet" href="{{ site.baseurl }}public/css/eclectic.css">
-  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ site.baseurl }}public/css/normalize.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}public/css/syntax.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}public/css/zerif.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}public/css/eclectic.css">
     
-  <link href='http://fonts.googleapis.com/css?family=Montserrat:700,400' rel='stylesheet' type='text/css'>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:700,400' rel='stylesheet' type='text/css'>
   
-  <link rel="shortcut icon" href="{{ site.baseurl }}public/favicon.ico">
+    <link rel="shortcut icon" href="{{ site.baseurl }}public/favicon.ico">
 
-  <!-- RSS -->
-  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+    <!-- RSS -->
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ site.baseurl }}blog/atom.xml">
+        
+    <!-- Latest compiled and minified CSS -->
+
+    {% if page.title == "Home" %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="{{ site.baseurl }}public/js/parallax.min.js"></script>
+    {% endif %}
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    
+
 </head>

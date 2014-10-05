@@ -1,57 +1,102 @@
-/* Left sidebar*/
 
-img.eclectic-logo-left {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+html, body {
+  margin: 0;
+  padding: 0;
 }
 
-p.copyright {
-    font-size: 0.8rem;
+html {
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
 }
-/* Main page*/
+
+@media (min-width: 38em) {
+  html {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 680px) {
+    img.eclectic-logo {
+        width: 80%;
+        min-width:  240px;
+    }
+
+    a.navbar-brand {
+        width:  80%;
+    }
+}
+
+body {
+    padding-top: 74px;
+}
+
+.navbar {
+min-height: 74px;    
+}
+
+.navbar-brand {
+    padding: 2px 10px;
+}
+
+.navbar-right {
+    padding-top:  12px;
+}
 
 section.intro {
-    
+    min-height:  700px;
 }
 
-img.eclectic-logo {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-h2.intro {
+h1.intro {
     text-align: center;
-    padding-top: 7rem;
-    color: #7f8c8d;
+    padding-top: 240px;
+    color:  white;
 }
 
-section.intro div.snippets {
-    padding-top: 80px;
+.bottom-message-section {
+    margin-top: 14%;
+    position: relative;
+    color:  white;
 }
 
-section.expertise {
-    padding-top: 90px;
+div.expertise-fluid {
+    background-color: #2c3e50;
+    color: #f39c12; 
 }
 
-h2.expertise {
-    text-align:  center;
+h2.expertise, div.expertise-detail {
+    padding-top:  60px;
+    padding-bottom: 60px;
 }
 
-section.expertise h5 {
-    display: inline-block;
-    margin-left: 1rem;
-    font-size:  18px;
+div.expertise-detail div.row {
+    padding-bottom: 20px;
 }
 
-section.expertise p {
-    margin-left:  3rem;
-    font-size: 16px;
+section.basics {
+    min-height:  700px;
 }
 
+h1.basics {
+    text-align: center;
+    padding-top: 240px;
+    color:  black;
+}
 
 /* Blog posts*/
+
+h1.post-title, h1.post-title a {
+    color: #c0392b; 
+}
+
+span.post-date, span.post-author, span.post-tags {
+    display:  block;
+}
+
+div.blog-content {
+    padding:  20px 0px;
+}
+
 a.comment-count {
     font-size:  0.7rem;
 }
