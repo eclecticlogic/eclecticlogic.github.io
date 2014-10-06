@@ -19,10 +19,16 @@
                 </div>
                 <div class="collapse navbar-collapse" id="eclectic-nav-collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="https://github.com/eclecticlogic">Github</a></li>
+                        {% if page.title == "Home" %}
+                        <li><a href="#expertise">Expertise</a></li>
+                        <li><a href="#aboutus">About</a></li>
+                        <li><a href="#contactus">Contact</a></li>
                         <li><a href="{{ site.baseurl }}blog">Blog</a></li>
+                        {% else %}
+                        <li><a href="{{ site.baseurl }}">Home</a></li>
                         <li><a href="{{ site.baseurl }}blog/archive">Archive</a></li>
                         <li><a href="{{ site.baseurl }}blog/atom.xml">Feed</a></li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>
@@ -46,5 +52,6 @@
     </script>
 
     {% include google_analytics.html %}
+
   </body>
 </html>
