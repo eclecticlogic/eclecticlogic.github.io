@@ -36,7 +36,7 @@ body {
 }
 
 .navbar-brand {
-    padding: 2px 10px;
+    padding: 6px 10px;
 }
 
 .navbar-right {
@@ -146,3 +146,11 @@ code {
     color: #7f8c8d;   
 }
 
+
+/* Mods for phone portrait */
+
+@media (max-width: 640px) {
+    h1.intro, h2.expertise, h1.basics {
+        font-size: 2.5rem;
+    }
+}
