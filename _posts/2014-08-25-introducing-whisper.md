@@ -9,7 +9,7 @@ Its common these days for Java based projects to use a logger like Logback and i
 
 A side-effect of such proactive monitoring that is often overlooked is that a simple email appender can very easily result in a flood of emails if something critical (such as user database) goes offline or if a often-used functionality stops working. Logback has a [DuplicateMessageFilter](http://logback.qos.ch/manual/filters.html#DuplicateMessageFilter) that one can configure to suppress duplicates but it is too simplistic. Once it starts to suppress the message, there doesn't seem to be a mechanism to revive the logging.
 
-## Enter Whisper
+### Enter Whisper
 
 [Whisper](https://github.com/eclecticlogic/whisper) is a generic appender written to solve precisely this problem. However, the architecture of Whisper allows you to throttle any other "endpoint" appender - SMTPAppender being one of them. In other words, Whisper is an appender that sits in between your log statement and the final appender. It feeds the final appender as long as a per-message threshold is not breached. Once breached it suppresses all messages until idle rate is achieved. 
 

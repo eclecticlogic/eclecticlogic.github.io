@@ -128,6 +128,8 @@ div.contacticons .fa-inverse {
 
 h1.post-title, h1.post-title a {
     color: #c0392b; 
+    font-size:  2rem;
+    text-transform: none;
 }
 
 span.post-date, span.post-author, span.post-tags {
