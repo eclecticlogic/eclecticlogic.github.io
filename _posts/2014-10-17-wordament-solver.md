@@ -15,7 +15,7 @@ _Statutory Disclaimer: This post is simply meant to be an exercise in developing
 
 Any first time casual player will be both astounded at the number of words identified by the leaders of any given round and simultaneously embarrassed by their own performance. In fact, the leaders are jaw-droppingly fast. Have a look at this video of a face-off (or is that word-off?):
 
-{% youtube zYeCYS7hk-g %}
+<iframe width="560" height="420" allowfullscreen="allowfullscreen" src="http://www.youtube.com/embed/zYeCYS7hk-g?color=white&amp;theme=light"> </iframe>
 
 Some of speed-challenged folks, especially the geeks at heart may consider instead the challenge of algorithmically finding all the words. The problem is relatively straightforward and with adequate setup may even make a great interview question. If you used as an interview question, I would strongly suggest letting the candidate program on a computer with an IDE/language of their choice and not on a whiteboard.
 
