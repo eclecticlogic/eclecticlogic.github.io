@@ -220,4 +220,28 @@ The variable `wordsFound` is simple HashSet. The only thing left to flush out is
 
 {% endhighlight %}
 
+Here is a sample run. The letters entered are:
+
+|a|b|c|d|
+---------
+|e|f|g|h|
+---------
+|i|j|k|l|
+---------
+|m|n|o|p|
+
+This gives us the following words:
+
+- knife
+- plonk
+- glop
+- mink
+- jink
+- fink
+- fab
+- ink
+- fin
+- lop
+
+
 The complete code is available at [Github](https://github.com/eclecticlogic/wordament). The code comes with a plea to use it to further academic interest in such puzzle solvers and not to get cheap thrills from cheating in the real game.   
