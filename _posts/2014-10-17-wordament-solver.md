@@ -222,13 +222,10 @@ The variable `wordsFound` is simple HashSet. The only thing left to flush out is
 
 Here is a sample run. The letters entered are:
 
-|a|b|c|d|
----------
-|e|f|g|h|
----------
-|i|j|k|l|
----------
-|m|n|o|p|
+`abcd`
+`efgh`
+`ijkl`
+`mnop`
 
 This gives us the following words:
 
