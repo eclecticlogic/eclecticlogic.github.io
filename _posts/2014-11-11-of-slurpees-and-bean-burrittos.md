@@ -56,7 +56,7 @@ Here are some findings from parsing the names:
 There are 2,760 class names that are greater than 50 characters in length. Among the largest are:
 
 - "Has This Type Pattern Tried To Sneak In Some Generic Or Parameterized Type Pattern matching Stuff Anywhere Visitor" (from Apache ServiceMix aspectJ 1.8.0)
-- "Web Get Number Of Parent Process Instances With Active User And Activity Instance Expected End Date" (from Bonita Serer 5.10.2)
+- "Web Get Number Of Parent Process Instances With Active User And Activity Instance Expected End Date" (from Bonita Server 5.10.2)
 
 I would have loved to be a fly on the wall when these names were being discussed!
 
