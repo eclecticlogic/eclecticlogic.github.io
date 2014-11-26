@@ -1,7 +1,8 @@
 ---
 layout: post
-title: Example content
-draft: true
+title: My Post Title
+author: Karthik Abram
+tags: java spring
 ---
 
 
