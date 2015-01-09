@@ -5,13 +5,13 @@ author: Karthik Abram
 tags: java postgresql pedal 
 ---
 
-## Overview
+### Overview
 
 Postgresql is one of the most popular open-source databases in use. It has good standards support and an impressive feature set - rich data types and advanced runtime management. The Pedal framework for Java enables fast inserts (we are talking orders of magnitude faster) into Postgresql through the [Copy](http://www.postgresql.org/docs/9.4/static/sql-copy.html) command directly at the JPA entity level. In this article, we provide an overview of the Pedal framework and show how to use the Copy command.   
  
 The Pedal framework consists of three libraries - dialect, tx and loader. [pedal-dialect](http://www.eclecticlogic.com/pedal-dialect) enables dialect (i.e., database) and provider (e.g., Hibernate) level features such as retrieval of schema name, mapped table name given a JPA entity, user-types (arrays, bit strings), etc. It also provides support for the Copy command in Posgresql. [pedal-tx](http://www.eclecticlogic.com/pedal-tx) is a Java-8 only framework that allows for transaction demarcation using Java 8 lambdas, transaction attached storage and transaction attached pre/post commit lambdas. In addition it also provides a DAO abstraction layer with support for fluent JQL/HQL and native queries. With [pedal-loader](http://www.eclecticlogic.com/pedal-loader) data population scripts for db-unit tests can be written in a Groovy DSL while working at the JPA entity level (with mapped column types, object-level foreign-keys, etc). 
 
-## Using the Copy Command
+### Using the Copy Command
 
 To enable copy support, first create an instance of `com.eclecticlogic.pedal.dialect.postgresql.CopyCommand`, ideally setup as a Spring-bean. It requires access to `com.eclecticlogic.pedal.provider.ProviderAccessSpi` which can be configured by creating a `com.eclecticlogic.pedal.provider.hibernate.HibernateProviderAccessSpiImpl.HibernateProviderAccessSpiImpl` passing it a reference to the `EntityManagerFactory`. Using Spring with Java-based configuration, the code would look like this:
 
