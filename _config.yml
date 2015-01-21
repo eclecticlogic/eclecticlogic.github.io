@@ -6,7 +6,6 @@ highlighter:         pygments
 permalink:        pretty
 
 # Setup
-title:            Eclectic Logic 
 tagline:          'Elegance in Craftsmanship'
 description:      'We build next-generation interactive and scalable systems. With deep expertise in the Java Platform, mobile, transactional systems, persistence models, analytics and high performance computing, we solve complex problems and turn ideas into reality.'
 url:              http://www.eclecticlogic.com
