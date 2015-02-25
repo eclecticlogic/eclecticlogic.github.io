@@ -26,28 +26,28 @@ lower = student.name?.toLowercase()
 The variable `lower` will be null if `name` is null. Armed with this powerful operator, you set about to show your newly acquired skill. You are writing a function that accepts Account objects. You know that sometimes the account may be null (if a spurious username is provided). However, if an account is non-null, you know that it has a non-null createdOn field. Your task is to get the month from this field. You write something like this:
 
 ```
-   void accumulateMonths(Account account) {
-       def month = account?.createdOn.month
-	   if (month) {
-		  // Do something with month
-       }
+void accumulateMonths(Account account) {
+   def month = account?.createdOn.month
+   if (month) {
+	  // Do something with month
    }
+}
 ```  
 
 You run the program and upon receiving a `null` Account object, you see an exception!
 
 ```
-    Exception in thread "main" java.lang.NullPointerException: Cannot get property 'month' on null object
-	at org.codehaus.groovy.runtime.NullObject.getProperty(NullObject.java:57)
+Exception in thread "main" java.lang.NullPointerException: Cannot get property 'month' on null object
+at org.codehaus.groovy.runtime.NullObject.getProperty(NullObject.java:57)
 ``` 
 
 Why did Groovy not stop when it evaluated `account?.` ? Why is it complaining about not being able to get the month property? The exception was thrown because we incorrectly interpreted the semantics of the `?.` operator. The null-safe operator in fact does not abort the current chain of calls on encountering a null. It is better translated to the construct below.
 
 ```
-   def a = account == null ? null : account.createdOn
-   def month = a.month
-   if (month) {
-   }
+def a = account == null ? null : account.createdOn
+def month = a.month
+if (month) {
+}
 ``` 
 
 The null-safe operator is a close-cousin of the ternary operator, not the `if` condition!
@@ -68,14 +68,14 @@ class NullSafeWithMap {
 Unfortunately you will get a syntax error since Groovy thinks the `?` is part of the ternary operator. This is because the null-safe operator is `?.` not just a `?` Putting a period after the question-mark will not help either.
 
 ```
-	myMap['b']?.[0] // Still a syntax error.
+myMap['b']?.[0] // Still a syntax error.
 ``` 
 
 
 If you replace the list subscript operator with the `get()` method, the code will work:
 
 ```
-	println (myMap['b']?.get(0))
+println (myMap['b']?.get(0))
 ```
 
 ### An equation to get NPE
@@ -167,25 +167,25 @@ The above construct is arguably a hack, but it works nevertheless.
 Groovy supports map literals. This allows you to create a map with a compact and readable syntax.
 
 ```
-   Map<String, Integer> myMap = ['a': 25]
-   myMap['b'] = 35
-   int d = myMap['a']
+Map<String, Integer> myMap = ['a': 25]
+myMap['b'] = 35
+int d = myMap['a']
 ```
 
 Armed with this new-found knowledge, you proceed to construct a map as follows.
 
 ```
-	String name = 'joe'
-	Map<String, Integer> myMap = [name: 25]
-	...
-    int value = myMap[name]
+String name = 'joe'
+Map<String, Integer> myMap = [name: 25]
+...
+int value = myMap[name]
 ```
 
 You run your program to discover a runtime exception saying that null cannot be converted to `int`! Upon further inspection with a debugger, you discover that your map is `['name': 25]` not `['joe': 25]`. What happened? Turns out you can't have variables in a map initialization. To achieve the intent above, you have to use a GString variable or enclose the variable in parenthesis.
 
 ```
-	String name = 'joe'
-	Map<String, Integer> myMap = ["$name": 25] // or [(name): 25]
+String name = 'joe'
+Map<String, Integer> myMap = ["$name": 25] // or [(name): 25]
 ```
 Map initialization cannot take the return values of functions or enums either. These also need to be turned into a GString expression or wrapped in parenthesis.
 
@@ -196,28 +196,28 @@ If you argue that Java's primitive arrays are an aberration, you win. Now lets d
 Given the java method
 
 ```
-	public class SomeClass {
-    
-	    public static void soStuff(int[] values) {
-	        for (int i : values) {
-	            System.out.println(i);
-	        }
-	    }
-	}
+public class SomeClass {
+
+    public static void soStuff(int[] values) {
+        for (int i : values) {
+            System.out.println(i);
+        }
+    }
+}
 ```
 
 the following Groovy code will fail.
 
 ```
-	def values = [1, 2, 3]
-    SomeClass.soStuff(values) 
+def values = [1, 2, 3]
+SomeClass.soStuff(values) 
 ```
 
 To coerce `values` into a primitive array, use the `as` operator with `<type>[]` type definition.
 
 ```
-	def values = [1, 2, 3]
-    SomeClass.soStuff(values as int[])
+def values = [1, 2, 3]
+SomeClass.soStuff(values as int[])
 ```
 
 ### Type-lessness
@@ -225,7 +225,7 @@ To coerce `values` into a primitive array, use the `as` operator with `<type>[]`
 Groovy supports duck typing. Yes, but what kind of duck allows this?
 
 ```
-	static int abc = new AtomicInteger()
+static int abc = new AtomicInteger()
 ```
 Remember that in Groovy, type declarations in your code are completely ignored. So the compiler will happily compile the above. Groovy 2.0 introduced specific annotations, `@TypeChecked` and `@CompileStatic` to alleviate some of these bugs. There are some caveats to be aware of when using these annotations. Refer to this [presentation](http://portal.sliderocket.com/vmware/Groovy-2-0-Static-Type-Checking-and-Compilation) for a good overview.  
 
@@ -235,7 +235,7 @@ Remember that in Groovy, type declarations in your code are completely ignored. 
 Sometimes features built with good intent can have unintended consequences. The next three topics present examples of such features in Groovy. Groovy converts all division to BigDecimal. This is especially useful in financial services apps. However, it converts all division to BigDecimal as I found out. I was writing code to determine the number of threads to use to process a list of objects. I wanted the thread count to be one-tenth the list size but with a minimum of 1 and a maximum of 50. 
 
 ```
-   int threads = Math.max(1, Math.min(list.size() / 10, 50))
+int threads = Math.max(1, Math.min(list.size() / 10, 50))
 ```
 
 When I ran the program, I got an exception stating, `Cannot resolve which method to invoke for [class java.math.BigDecimal, class java.lang.Integer] due to overlapping prototypes between ...`
@@ -253,9 +253,9 @@ Groovy evaluates truth as many things - null objects are false, empty lists are 
 In a payment app, we want to make sure the amount has been defined. So we write a test of nullability.
 
 ```
-	if (!amount) {
-		throw new IllegalArgumentException(...
-	}
+if (!amount) {
+	throw new IllegalArgumentException(...
+}
 ```
 
 Except somehow, the amount ends up being exactly zero (lets say this is the amount to be charged and a coupon made the amount zero). Well, the code unexpectedly fails.
@@ -268,15 +268,15 @@ Groovy allows you to test for nullability and continue an operation by using the
 Consider the following condition
 
 ```
-   if (!someObject.someProperty?.taxable) {
-   }
+if (!someObject.someProperty?.taxable) {
+}
 ``` 
 
 The author's intent was that if taxable is false, some piece of code should be executed. However, if someProperty itself is null, in this particular case, the code should not have been executed. The author realized that someProperty is a nullable field and therefore came up with the above construct. If someProperty is null, the expression evaluates to true! The actual condition required was
 
 ```
-	if (someObject.someProperty && someObject.someProperty.taxable) {
-    }
+if (someObject.someProperty && someObject.someProperty.taxable) {
+}
 ```
 
 ### Language philosophy
