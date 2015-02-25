@@ -7,7 +7,7 @@ tags: groovy
 
 Groovy is a popular language for the JVM with a syntax that includes and extends Java's. Groovy's appeal comes from the extended syntax - optional semicolons, type-inference (strictly speaking, Groovy is typeless), literals for lists and maps, closures, operator overloading, etc. However, these extra features are not always intuitive in their interaction, leading to some syntactic oddities. Here is a list of oddities that I've encountered. This is not an exhaustive list. If you have run into other issues, please do leave a commment below.   
 
-### Applying null-safe retrieval to map entries.
+### Null safety in every step
 
 The null-safe operator allows the in-lining of nullability checks. So instead of:
 
@@ -23,7 +23,38 @@ You can write
 lower = student.name?.toLowercase()
 ```
 
-The variable `lower` will be null if `name` is null. In Groovy, you can access map entries as `map[key]` and list entries as `list[index]`. So if we had a `Map<String, List<Integer>>`, and we want to make sure a map entry is not null before we access the list, should we be able to use the null-safe operator? 
+The variable `lower` will be null if `name` is null. Armed with this powerful operator, you set about to show your newly acquired skill. You are writing a function that accepts Account objects. You know that sometimes the account may be null (if a spurious username is provided). However, if an account is non-null, you know that it has a non-null createdOn field. Your task is to get the month from this field. You write something like this:
+
+```
+   void accumulateMonths(Account account) {
+       def month = account?.createdOn.month
+	   if (month) {
+		  // Do something with month
+       }
+   }
+```  
+
+You run the program and upon receiving a `null` Account object, you see an exception!
+
+```
+    Exception in thread "main" java.lang.NullPointerException: Cannot get property 'month' on null object
+	at org.codehaus.groovy.runtime.NullObject.getProperty(NullObject.java:57)
+``` 
+
+Why did Groovy not stop when it evaluated `account?.` ? Why is it complaining about not being able to get the month property? The exception was thrown because we incorrectly interpreted the semantics of the `?.` operator. The null-safe operator in fact does not abort the current chain of calls on encountering a null. It is better translated to the construct below.
+
+```
+   def a = account == null ? null : account.createdOn
+   def month = a.month
+   if (month) {
+   }
+``` 
+
+The null-safe operator is a close-cousin of the ternary operator, not the `if` condition!
+
+### Applying null-safe retrieval to map entries.
+
+In Groovy, you can access map entries as `map[key]` and list entries as `list[index]`. So if we had a `Map<String, List<Integer>>`, and we want to make sure a map entry is not null before we access the list, should we be able to use the null-safe operator? 
 
 ```
 class NullSafeWithMap {
