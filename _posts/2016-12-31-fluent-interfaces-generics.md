@@ -16,7 +16,7 @@ List<String> parts = splitter.splitToList(input);
 
 {% endhighlight %}
 
-That is four lines packed with a lot of noise. The two setters could have been written as parameter-less methods but I wanted to stick to Javabean specifications here. Now compare this with the fluent version of Splitter from Google Guava.
+That is four lines packed with a lot of noise. The two setters could have been written as parameter-less methods but I wanted to stick to Javabean specifications here. Now compare this with the fluent version of [Splitter](https://github.com/google/guava/wiki/StringsExplained#splitter) from [Google Guava](https://github.com/google/guava).
 
 {% highlight java %}
 
@@ -119,7 +119,7 @@ Animal<Dog> dog = new Dog().eat(3).bark();
 
 {% endhighlight %}
 
-Problem solved? Well, almost. Until you realize that if you know include Animal as a member of any class, you bring along baggage - in the form of recursive generics that you have to apply to the container class (or method) and this can easily mushroom into very complex generic definitions. There is an alternate way of building fluent interfaces with inheritance but without generics by accepting a slight compromise. We do this by introduce a very specific typing method that allows us to switch the static type.
+Problem solved? Well, almost. Until you realize that if you know include Animal as a member of any class, you bring along baggage - in the form of [recursive generics](http://stackoverflow.com/questions/26304527/recursive-generic-and-fluent-interface) that you have to apply to the container class (or method) and this can easily mushroom into very complex generic definitions. There is an alternate way of building fluent interfaces with inheritance but without generics by accepting a slight compromise. We do this by introduce a very specific typing method that allows us to switch the static type.
 
 {% highlight java %}
 
