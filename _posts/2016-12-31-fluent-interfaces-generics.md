@@ -81,7 +81,7 @@ public void someMethod() {
 
 {% endhighlight %}
 
-In a real world API, we may not have the luxury of switching methods like this (what if the dog really only likes to bark after eating!) and requiring particular ordering of calls makes for an ugly API. The standard solution in such a case is to introduce generics with a particular twist - recursive generics.
+In a real world API, we may not have the luxury of switching methods like this (what if the dog really only likes to bark after eating!) and requiring particular ordering of calls makes for an ugly API. The standard solution in such a case is to introduce generics with a particular twist - [recursive generics](http://stackoverflow.com/questions/26304527/recursive-generic-and-fluent-interface).
 
 
 {% highlight java %}
@@ -119,7 +119,7 @@ Animal<Dog> dog = new Dog().eat(3).bark();
 
 {% endhighlight %}
 
-Problem solved? Well, almost. Until you realize that if you know include Animal as a member of any class, you bring along baggage - in the form of [recursive generics](http://stackoverflow.com/questions/26304527/recursive-generic-and-fluent-interface) that you have to apply to the container class (or method) and this can easily mushroom into very complex generic definitions. There is an alternate way of building fluent interfaces with inheritance but without generics by accepting a slight compromise. We do this by introduce a very specific typing method that allows us to switch the static type.
+Problem solved? Well, almost. Until you realize that if you know include Animal as a member of any class, you bring along baggage - in the form of recursive generics that you have to apply to the container class (or method) and this can easily mushroom into very complex generic definitions. There is an alternate way of building fluent interfaces with inheritance but without generics by accepting a slight compromise. We do this by introduce a very specific typing method that allows us to switch the static type.
 
 {% highlight java %}
 
