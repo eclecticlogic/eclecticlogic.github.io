@@ -16,7 +16,7 @@ author:
   url:            https://twitter.com/eclecticlogic
 
 paginate:         5
-paginate_path: "blog/page:num"
+paginate_path: "page:num"
 
 # Custom vars
 
