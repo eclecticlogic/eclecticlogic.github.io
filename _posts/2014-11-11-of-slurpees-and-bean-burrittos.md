@@ -8,7 +8,7 @@ tags: oo design humor
 
 Groovy has some classes with very interesting names - `ConfigSlurper`, `XmlSlurper` and `JsonSlurper`. I wonder if the engineer who wrote this class had a 7-Eleven slurpee addiction!
 
-![]({{ site.baseurl }}public/images/blog/slurpee.jpg)
+![](/public/images/blog/slurpee.jpg)
 
 I can imagine `ConfigSlurper` (and its cousins) making a slurping noise as it executes (slurps?), complete with a louder noise as it ends - similar to an annoying kid sucking at the last bit of drink from an empty cup filled with ice. One has to wonder about the wisdom behind calling a class Slurper in a professional software library. But perhaps such concerns are not valid when dealing with a language called Groovy.  The software world has a penchant for coming up with interesting names. Apart from culinary and beverage related names such as Java, Beans, Cocoa and Guava topped with Sugar and eliciting a Yum response, we also have reptilian and warrior names like Python, Boa and Ninja. Indeed a simple perusal of Github leads to encounters with Pigshell, Nightmare and Phantom. Not to be left behind, the hardware world is re-calibrating from sophisticated names like Centrino and Ivy Bridge to Raspberry Pi and Beaglebone.
 
@@ -60,4 +60,4 @@ There are 2,760 class names that are greater than 50 characters in length. Among
 
 I would have loved to be a fly on the wall when these names were being discussed!
 
-The raw class component names data is available as a [CSV file]({{ site.baseurl }}public/data/class-name-word-frequency.csv).  
+The raw class component names data is available as a [CSV file](/public/data/class-name-word-frequency.csv).  

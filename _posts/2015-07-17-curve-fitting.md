@@ -7,19 +7,19 @@ tags: algorithm
 
 Here is a simple technique to modify linear data points to a curve of your choice. If your function looks linear like this:
 
-![]({{ site.baseurl }}public/images/blog/curve/linear-1.png)
+![](/public/images/blog/curve/linear-1.png)
 
 or even has an inverse linear form like this:
 
-![]({{ site.baseurl }}public/images/blog/curve/linear-2.png)
+![](/public/images/blog/curve/linear-2.png)
 
 And you want to instead map it to a curve that accentuates the initial values and suppresses the tail:
 
-![]({{ site.baseurl }}public/images/blog/curve/curve-1.png)
+![](/public/images/blog/curve/curve-1.png)
 
 or has an exponential drop at the end points like this:
 
-![]({{ site.baseurl }}public/images/blog/curve/curve-2.png)
+![](/public/images/blog/curve/curve-2.png)
 
 then, Cubic Bezier curves can be used to achieve the desired transformation. A Cubic Bezier curve is given by:
 
